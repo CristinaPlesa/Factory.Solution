@@ -10,7 +10,7 @@ namespace Factory
       var host = new WebHostBuilder()
         .UseKestrel()
         .UseContentRoot(Directory.GetCurrentDirectory())
-        .UseISSIntegration()
+        .UseIISIntegration()
         .UseStartup<Startup>()
         .Build();
 
