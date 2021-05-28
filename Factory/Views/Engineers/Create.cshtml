@@ -5,15 +5,18 @@
 @model Factory.Models.Engineer
 
 <h4>Add a new Engineer to the Factory:</h4>
+<hr />
 
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name, new { @class = "text", type = "name", required = "required" })
+  <br />
 
   @Html.Label("Select Machine")
   @Html.DropDownList("MachineId")
+  <br />
 
-  <input type="submit" value="Add a new Engineer" class="btn btn-default" />
+  <input type="submit" value="Add a new Engineer" class="btn btn-light" />
 }
 <p  id="createButton">@Html.ActionLink("Show all Engineers", "Index")</p>
