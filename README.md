@@ -59,4 +59,5 @@
 Please reach out through my GitHub account.
 [github.com/CristinaPlesa](https://github.com/CristinaPlesa)
 
-<!-- Don't forget to refactor your README instructions to make sense for this project!! -->
+<!-- Don't forget to refactor your README instructions to make sense for this project!! 
+Also, use dictionary to display both engineers and machines all on one page? idk, look into it -->
