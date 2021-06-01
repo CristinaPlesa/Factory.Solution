@@ -6,8 +6,9 @@
 @using Factory.Models;
 
 <h2>Engineer Details</h2>
-<hr />
+<hr class="new1" />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<hr class="new2" />
 
 @if (@Model.JoinEntities.Count == 0)
 {
@@ -16,17 +17,15 @@
 else
 {
   <h4>Machines the Engineer belongs to:</h4>
-  <ul>
-    @foreach(var join in Model.JoinEntities)
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Machine.Name</li>
+    @using (Html.BeginForm("DeleteMachine", "Engineers"))
     {
-      <li>@join.Machine.Name</li>
-      @using (Html.BeginForm("DeleteMachine", "Engineers"))
-      {
-        @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" value="Delete"/>
-      }
+      @Html.Hidden("joinId", @join.EngineerMachineId)
+      <input type="submit" value="Delete"/>
     }
-  </ul>
+  }
 }
 
 <p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
